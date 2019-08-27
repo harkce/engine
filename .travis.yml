@@ -11,4 +11,7 @@ before_install:
   - go mod vendor
 
 script:
-  - go test -v ./...
+  - ./coverage.sh
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
